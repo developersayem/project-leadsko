@@ -28,7 +28,7 @@ api.interceptors.response.use(
       try {
         // Call refresh endpoint; cookies are sent automatically
         await axios.post(
-        `https://project-file-management-system.onrender.com/api/v1/api/v1/auth/refresh-token`,
+        `${production}/api/v1/api/v1/auth/refresh-token`,
           {},
           { withCredentials: true }
         );
