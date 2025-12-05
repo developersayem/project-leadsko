@@ -7,6 +7,7 @@ const express_1 = __importDefault(require("express"));
 const app_controller_1 = require("../controller/app.controller");
 const router = express_1.default.Router();
 router.get("/folders-with-leads", app_controller_1.getAllFoldersWithLeads);
+router.get("/folders-with-subfolders", app_controller_1.getFoldersWithCounts);
 // GET → Fetch latest marquee
 router.get("/marquee", app_controller_1.getMarquee);
 router.get("/:folderId/files", app_controller_1.getFolderWithFiles);

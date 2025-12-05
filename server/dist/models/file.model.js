@@ -41,5 +41,6 @@ const FileSchema = new mongoose_1.Schema({
     price: { type: String, required: true },
     numbers: { type: Number, required: true },
     currency: { type: String, required: true },
+    icon: { type: String, required: true, enum: ["xls", "pdf"] },
 }, { timestamps: true });
 exports.File = mongoose_1.default.model("File", FileSchema);

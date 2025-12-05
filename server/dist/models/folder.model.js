@@ -35,12 +35,16 @@ var __importStar = (this && this.__importStar) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Folder = void 0;
 const mongoose_1 = __importStar(require("mongoose"));
-// ---------- Schema ----------
 const FolderSchema = new mongoose_1.Schema({
     name: {
         type: String,
         required: true,
         trim: true,
+    },
+    parentFolder: {
+        type: mongoose_1.default.Schema.Types.ObjectId,
+        ref: "Folder",
+        default: null, // root folder has no parent
     },
     files: [
         {
@@ -49,5 +53,4 @@ const FolderSchema = new mongoose_1.Schema({
         },
     ],
 }, { timestamps: true });
-// ---------- Export Model ----------
 exports.Folder = mongoose_1.default.model("Folder", FolderSchema);
